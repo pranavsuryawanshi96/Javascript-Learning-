@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      create btn after clicking after 1sec text inside the btn changes to
+      finished
+    </title>
+  </head>
+  <body>
+    <button class="js-btn" onclick="updateButton()">Start</button>
+    <script>
+      function updateButton() {
+        const btn = document.querySelector(".js-btn");
+
+        if (btn.textContent === "Start") {
+          setTimeout(function () {
+            btn.textContent = "Finished!";
+          }, 1000);
+        } else {
+          btn.textContent = "Start";
+        }
+      }
+    </script>
+  </body>
+</html>

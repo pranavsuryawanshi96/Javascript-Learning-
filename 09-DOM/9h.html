@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>when we type in text box it update in down below</title>
+  </head>
+  <body>
+    <input
+      placeholder="enter here"
+      class="js-input"
+      onkeyup="
+        const inputEl = document.querySelector('.js-input');
+        document.querySelector('.js-msg').innerHTML = inputEl.value;
+      "
+    />
+    <p class="js-msg"></p>
+  </body>
+</html>

@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      Continuing from exercise 12c, modify the button so that: When we click the
+      button, the text immediately changes to "Loading..." Then after 1 second,
+      the text changes to "Finished!"
+    </title>
+  </head>
+  <body>
+    <button class="js-btn" onclick="updateButton()">Start</button>
+    <script>
+      function updateButton() {
+        const btn = document.querySelector(".js-btn");
+        btn.textContent = "Loading...";
+        setTimeout(function () {
+          btn.textContent = "Finished!";
+        }, 1000);
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      create a text box and submit btn after clicking submit display name
+    </title>
+  </head>
+  <body>
+    <input
+      placeholder="Name"
+      class="input-name"
+      onkeydown="
+        if (event.key === 'Enter') {
+          showName();
+        }
+      "
+    />
+    <button onclick="showName()">Submit</button>
+    <p class="js-result"></p>
+    <script>
+      function showName() {
+        const inputEl = document.querySelector(".input-name");
+        document.querySelector(".js-result").innerHTML =
+          `Your Name is: ${inputEl.value}`;
+      }
+    </script>
+  </body>
+</html>

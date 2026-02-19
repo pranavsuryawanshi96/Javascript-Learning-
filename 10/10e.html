@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      Create the button on the right. When clicking this button, it should turn
+      ON / OFF. Hints: When clicking the button, add or remove the class
+      'is-toggled', and use it to change the styling. Use if
+      (classList.contains('is-toggled')) to decide whether to add or remove the
+      'is-toggled' class.
+    </title>
+    <style>
+      .toggle-button {
+        background-color: rgb(230, 230, 230);
+        border: none;
+        padding: 10px 15px;
+        border-radius: 5px;
+        margin-right: 10px;
+        font-size: 15px;
+        cursor: pointer;
+      }
+
+      .is-toggled {
+        background-color: black;
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <button
+      class="toggle-button"
+      onclick="
+        const button = document.querySelector('.toggle-button');
+        if (!button.classList.contains('is-toggled')) {
+          button.classList.add('is-toggled');
+        } else {
+          button.classList.remove('is-toggled');
+        }
+      "
+    >
+      Gaming
+    </button>
+    <button
+      class="toggle-button js-button-2"
+      onclick="
+        button = document.querySelector('.js-button-2');
+        if (!button.classList.contains('is-toggled')) {
+          button.classList.add('is-toggled');
+        } else {
+          button.classList.remove('is-toggled');
+        }
+      "
+    >
+      Music
+    </button>
+  </body>
+</html>

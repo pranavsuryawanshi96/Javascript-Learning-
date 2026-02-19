@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>create a fun 2 product which same value if not return false</title>
+  </head>
+  <body>
+    <script>
+      function isSameProduct(product1, product2) {
+        if (
+          product1.name === product2.name &&
+          product2.name === product2.price
+        ) {
+          return true;
+        } else {
+          return false;
+        }
+      }
+      const product1 = {
+        name: "basketball",
+        price: 2095,
+      };
+
+      const product2 = {
+        name: "socks",
+        price: 1090,
+      };
+
+      console.log(isSameProduct(product1, product2));
+    </script>
+  </body>
+</html>
