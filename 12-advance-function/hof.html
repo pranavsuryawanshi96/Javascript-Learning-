@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      const companies = [
+        { name: "Google", category: "Product Based", start: 1981, end: 2004 },
+        { name: "Amazon", category: "Product Based", start: 1992, end: 2008 },
+        { name: "Paytm", category: "Product Based", start: 1999, end: 2007 },
+        { name: "Coforge", category: "Service Based", start: 1989, end: 2010 },
+        { name: "Mindtree", category: "Service Based", start: 1989, end: 2010 },
+      ];
+
+      const ages = [33, 12, 20, 16, 5, 54, 21, 44, 61, 13, 15, 45, 25, 64, 32];
+      const sb = companies.filter((company) => {
+        if (company.category === "Product Based") {
+          return true;
+        }
+      });
+      console.log(sb);
+      // or we can write in short form
+      const ss = companies.filter(
+        (company) => company.category === "Service Based",
+      );
+
+      console.log(ss);
+      // map fn
+      companies.map((companies, index) => {
+        console.log(companies, index);
+      });
+    </script>
+  </body>
+</html>

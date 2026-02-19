@@ -6,23 +6,29 @@ renderTodoList();
 function renderTodoList() {
   let todoListHTML = "";
   todoList.forEach((todoObject, i) => {
-    const todoObject = todoList[i];
     const { name, dueDate } = todoObject;
     // this techniques call generating html
     const html = `
     <div>${name}</div>
     <div>${dueDate}</div>
-    <button onClick="
-    todoList.splice(${i},1);
-    renderTodoList();   
-    "class="delete-todo-btn">Delete</button>
+    <button class="delete-todo-btn js-delete-todo-btn">Delete</button>
     `;
     todoListHTML += html;
   });
   // console.log(todoListHTML);
   document.querySelector(".js-todo-list").innerHTML = todoListHTML;
+  // adding html btn to page to select all delete btn we can use all querySelectorAll
+  document.querySelectorAll(".js-delete-todo-btn").forEach((deleteBtn, i) => {
+    deleteBtn.addEventListener("click", () => {
+      todoList.splice(i, 1);
+      renderTodoList();
+    });
+  });
 }
-
+// instead of doing onclick in html we can do addEventListener in js
+document.querySelector(".js-add-todo-btn").addEventListener("click", () => {
+  addTodo();
+});
 function addTodo() {
   const inputElement = document.querySelector(".js-name-input");
   const dateInputElement = document.querySelector(".js-due-date-input");
@@ -43,7 +49,7 @@ function addTodo() {
   inputElement.value = "";
   renderTodoList();
 }
-function handelAddKeydown(event) {
+function handleAddKeydown(event) {
   // console.log(event.key);
   if (event.key === "Enter") {
     addTodo();

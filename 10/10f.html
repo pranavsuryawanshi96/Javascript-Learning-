@@ -73,6 +73,11 @@
             document.querySelector(".js-total-cost").innerHTML = "";
             document.querySelector(".js-error-message").innerHTML = "";
 
+            if (!cost) {
+              document.querySelector(".js-error-message").innerHTML =
+                "Please enter a  cost amount";
+              return;
+            }
             if (cost < 0) {
               document.querySelector(".js-error-message").innerHTML =
                 "Error: cost cannot be less than $0";
